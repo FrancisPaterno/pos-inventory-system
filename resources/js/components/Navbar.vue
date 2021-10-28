@@ -103,8 +103,7 @@
             </v-list-item>
             </v-list-group>
         </v-list-item-group></v-list>
-        </v-navigation-drawer
-    >
+      </v-navigation-drawer>
   </v-card>
 </template>
 

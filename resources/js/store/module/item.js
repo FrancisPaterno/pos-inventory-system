@@ -1,14 +1,17 @@
 import { data } from "jquery";
 
 const state = {
-    items:[]
+    items:[],
+    allitems:[]
 };
 const getters = {
-    items:(state)=>(state.items.data)
+    items:(state)=>(state.items.data),
+    getAllItems:(state)=>(state.allitems)
 };
 const actions = {};
 const mutations = {
     setItems:(state, items)=>(state.items = items),
+    setAllItems:(state, items)=>(state.allitems = items),
     setItem:(state, item)=>(state.items.data.push(item)),
     setItemCurrentPage:(state, data)=>(state.items.current_page = data),
     updateItem:(state, item)=>{

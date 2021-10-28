@@ -47,3 +47,5 @@ Route::resource('/warehouse', 'WarehouseController');
 Route::resource('/supplier', 'SupplierController');
 
 Route::resource('/stockHeaders', 'StockHeadersController');
+
+Route::resource('/stockItems', 'StockItemController');

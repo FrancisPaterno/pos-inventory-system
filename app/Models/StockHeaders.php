@@ -22,4 +22,9 @@ class StockHeaders extends Model
     {
         return $this->belongsTo(Supplier::class);
     }
+
+    public function stockitems()
+    {
+        return $this->hasMany(StockItem::class);
+    }
 }

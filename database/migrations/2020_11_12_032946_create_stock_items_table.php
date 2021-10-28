@@ -14,8 +14,27 @@ class CreateStockItemsTable extends Migration
     public function up()
     {
         Schema::create('stock_items', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('stock_header_id');
+            $table->unsignedBigInteger('item_id');
+            $table->string('description', 500)->nullable();
+            $table->integer('qty');
+            $table->double('wholesale_price', 8, 2);
+            $table->double('retail_price', 8, 2);
+            $table->softDeletes();
             $table->timestamps();
+
+            $table->foreign('stock_header_id')
+                ->references('id')
+                ->on('stock_headers')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
+
+            $table->foreign('item_id')
+                ->references('id')
+                ->on('items')
+                ->onUpdate('cascade')
+                ->onDelete('restrict');
         });
     }
 
